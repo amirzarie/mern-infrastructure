@@ -11,7 +11,9 @@ app.use(express.json());
 
 // Configure both serve-favicon & static middleware
 // to serve from the production 'build' folder
-app.use(favicon(path.join(__dirname, 'build', 'favicon.ico')));
+if (process.env.NODE_ENV === 'production') {
+    app.use(favicon(path.join(__dirname, 'build', 'favicon.ico')));
+}
 app.use(express.static(path.join(__dirname, 'build')));
 
 // Put API routes here, before the "catch all" route
@@ -30,4 +32,4 @@ app.listen(port, function() {
   console.log(`Express app running on port ${port}`)
 });
 
-// Run "nodemon server" to run the server (on port 3001) and "npm start" to run the react app (on port 3000).
+// Run "nodemon server" or "npm run server" to run the server (on port 3001) and "npm start" to run the react app (on port 3000).
