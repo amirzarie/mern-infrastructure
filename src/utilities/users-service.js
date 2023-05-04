@@ -38,3 +38,4 @@ export async function signUp(userData) {
 export async function logOut() {
   removeJWT();
 }
+
