@@ -34,3 +34,7 @@ export async function signUp(userData) {
   setJWT(token);
   return getUser();
 }
+
+export function logOut() {
+  localStorage.removeItem("token");
+}
