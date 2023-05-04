@@ -32,5 +32,5 @@ export function getUser() {
 export async function signUp(userData) {
   const token = await usersAPI.signUp(userData);
   setJWT(token);
-  return token;
+  return getUser();
 }
