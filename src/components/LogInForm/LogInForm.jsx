@@ -8,7 +8,7 @@ export default function LogInForm({ setUser }) {
   });
   const [error, setError] = useState("");
 
-  function handleChnage(e) {
+  function handleChange(e) {
     setCredentials({ ...credentials, [e.target.name]: e.target.value });
     setError("");
   }
